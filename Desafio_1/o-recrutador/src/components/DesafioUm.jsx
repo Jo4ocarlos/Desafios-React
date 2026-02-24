@@ -7,6 +7,18 @@ const DesafioUm = () => {
         { id: 1, nome: "Lucas" } // Lucas já começa na equipe
     ]);
 
+    const sortearMembro = ()=>{
+        const indiceSorteado = Math.floor(Math.random() * nomesPossiveis.length);
+        console.log(indiceSorteado)
+
+        const membroSorteado = nomesPossiveis[indiceSorteado]
+        
+        return membroSorteado;
+
+     
+
+    }
+
     const recrutarAleatorio = () => {
         // SUA LÓGICA ENTRA AQUI!
         // 1. Sortear um índice baseado no tamanho do array 'nomesPossiveis'
@@ -14,11 +26,21 @@ const DesafioUm = () => {
         // 3. Montar o objeto { id: ..., nome: ... }
         // 4. Usar setEquipe com (prev) => ... para colocar ele no array
 
-        const indiceSorteado = Math.floor(Math.random() * nomesPossiveis.length);
-        console.log(indiceSorteado)
+        if (equipe.length >= nomesPossiveis.length + 1) {
+            alert("A equipe está completa!");
+            return;
+        }
+        const membroSorteado = sortearMembro()
 
-        const membroSorteado = nomesPossiveis[indiceSorteado]
-        console.log(membroSorteado);
+       const jaExiste = equipe.some((membro)=>{
+           return membro.nome == membroSorteado
+        })
+
+        if(jaExiste){
+            alert(`Opa! ${membroSorteado} já está na equipe. Tente de novo!`);
+            return 
+        }
+        
 
         const NovoMembro = {id: Math.random(), nome:membroSorteado};
  console.log(NovoMembro)
