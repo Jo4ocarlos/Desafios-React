@@ -4,7 +4,7 @@ const DesafioUm = () => {
     const nomesPossiveis = ["Ana", "Carlos", "João", "Maria"];
 
     const [equipe, setEquipe] = useState([
-        { id: 1, nome: "Lucas" } // Lucas já começa na equipe
+        { id: 1, nome: "Lucas" } 
     ]);
 
     const sortearMembro = ()=>{
@@ -20,11 +20,6 @@ const DesafioUm = () => {
     }
 
     const recrutarAleatorio = () => {
-        // SUA LÓGICA ENTRA AQUI!
-        // 1. Sortear um índice baseado no tamanho do array 'nomesPossiveis'
-        // 2. Pegar o nome sorteado
-        // 3. Montar o objeto { id: ..., nome: ... }
-        // 4. Usar setEquipe com (prev) => ... para colocar ele no array
 
         if (equipe.length >= nomesPossiveis.length + 1) {
             alert("A equipe está completa!");
