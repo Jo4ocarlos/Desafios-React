@@ -13,7 +13,6 @@ function App() {
       <div><DesafioDois/></div>
       <div><DesafioPorteiro/></div>
     </section>
-      
     </>
   )
 }
