@@ -13,8 +13,6 @@ const DesafioDois = () => {
         console.log(indiceSorteado)
 
        const idSorteado = monstros[indiceSorteado].id
-
-       
        setMonstros((prevMonstro =>{
         return prevMonstro.map((monstro) =>{ 
             if(monstro.id == idSorteado ){
