@@ -1,17 +1,15 @@
 import { useState } from "react";
-
+// desafio consiste em adionar pessoas ao inicio da fila sem duplicidade, tamanho maximo de 5 pessoas
 const DesafioPorteiro = () => {
     const nomes = ["paulo", "joão", "fernanda", "lourrana"]
+
     const [fila, setFila] = useState([
         { id: 1, nome: "Jéssica" },
         { id: 20, nome: "Bruno" }
     ]);
 
     const entrarNaFila = () => {
-        // 1. Gere um nome aleatório ou fixo
-        // 2. Verifique se a fila já tem 5 pessoas. Se tiver, return.
-        // 3. Crie o objeto novoPessoa
-        // 4. Adicione ele NO COMEÇO do array usando setFila
+      
         if(fila.length >= 5){
             alert("lista cheia, volte amanhã!!!")
             return
@@ -31,10 +29,11 @@ const DesafioPorteiro = () => {
         if(estaNalista){
             alert(`tente novamente`)
          return
-        }
+        } // validação que barra possiveis duplicidades de NOMES
 
         setFila((prevFila)=>{
-            return [novaPessoa, ...prevFila]
+            return [novaPessoa, ...prevFila] // para adicionar uma pessoa ao inicio de um array de objetos basta inverter a ordem do spread operator
+            //de novo o uso do Previous state para sempre pegar o momento atual da lista e adcionar novas pessoas
         })
         
     }

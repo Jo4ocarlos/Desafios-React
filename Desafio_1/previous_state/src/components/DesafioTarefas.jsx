@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+//Desafio consiste em atualizar o estado de uma tarefa para concluido ou não, de maneira que troque a cada clique, como um interruptor, liga/desliga
 const DesafioTarefas = () => {
     const [tarefas, setTarefas] = useState([
         { id: 1, texto: "Estudar React", completada: false },
@@ -14,7 +14,9 @@ const DesafioTarefas = () => {
                 
             if(tarefa.id === idParaAlterar){
             
-                return {...tarefa, completada: !tarefa.completada}
+                return {...tarefa, completada: !tarefa.completada} 
+                // defini o valor da propriedade "completada" da lista tarefeas com o inverso dele mesmo utilizando o not/negação "!" 
+                // com a utilização do Previou state sempre teremos a forma mais recente da lista, então se no primeiro clique era false e se tornou true, no segundo clique que é true se tornará false assim o "interruptor" funciona corretamente
                 
             }else{
                 return tarefa;

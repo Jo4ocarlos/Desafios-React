@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-//resoulução do desafio que consiste em sortear uma pessoa de dentro da lista e adicionala a equipe, com um id proprio
+//resolução do desafio que consiste em sortear uma pessoa de dentro da lista e adicionala a equipe, com um id proprio
 const DesafioUm = () => {
     const nomesPossiveis = ["Ana", "Carlos", "João", "Maria"];
 

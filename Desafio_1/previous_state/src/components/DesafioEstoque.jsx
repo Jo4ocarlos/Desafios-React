@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// desafio consiste em remover produtos vencidos da lista
 const DesafioEstoque = () => {
     const [produtos, setProdutos] = useState([
         { id: 1, nome: "Leite", validade: false }, 
@@ -11,7 +12,15 @@ const DesafioEstoque = () => {
     const limparEstoque = () => {
         
         setProdutos((prevProdutos) =>{
-            return prevProdutos.filter(produto => produto.validade == true)
+            return prevProdutos.filter(produto => produto.validade == true) //utilizei o metodo filter() para devolver uma lista nova sem os produtos vencidos
+            
+            /*
+            Adicionar itens (...prev) *spread operator*
+
+            Remover itens (.filter)
+
+            Editar itens (.map)
+             */
         })
     }
 

@@ -16,8 +16,8 @@ const DesafioDois = () => {
        const idSorteado = monstros[indiceSorteado].id
        setMonstros((prevMonstros =>{
         
-        return prevMonstros.map((monstro) =>{ //usamos o map com Previous state para devolver uma lista com o monstro sortesado com -20 de hp
-            // a utlzição do Previous serve para sempre utilizarmos a versão mais recente da lista, dessa maneira o hp vai de 100..80..60..etc
+        return prevMonstros.map((monstro) =>{ //utilizei o map com Previous state para devolver uma lista com o monstro sorteado com -20 de hp
+            // o uso do Previous serve para sempre utilizarmos a versão mais recente da lista, dessa maneira o hp vai de 100..80..60..etc
             if(monstro.id == idSorteado ){
                 return {...monstro, hp: monstro.hp - 20}
             }else {
