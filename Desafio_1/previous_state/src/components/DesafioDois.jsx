@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Desafio consiste em sortear um monstro que irá perder 20 de HP toda vezes que for sorteado
 const DesafioDois = () => {
     const [monstros, setMonstros] = useState([
         { id: 1, nome: "Orc", hp: 100 },
@@ -13,8 +14,10 @@ const DesafioDois = () => {
         console.log(indiceSorteado)
 
        const idSorteado = monstros[indiceSorteado].id
-       setMonstros((prevMonstro =>{
-        return prevMonstro.map((monstro) =>{ 
+       setMonstros((prevMonstros =>{
+        
+        return prevMonstros.map((monstro) =>{ //usamos o map com Previous state para devolver uma lista com o monstro sortesado com -20 de hp
+            // a utlzição do Previous serve para sempre utilizarmos a versão mais recente da lista, dessa maneira o hp vai de 100..80..60..etc
             if(monstro.id == idSorteado ){
                 return {...monstro, hp: monstro.hp - 20}
             }else {
