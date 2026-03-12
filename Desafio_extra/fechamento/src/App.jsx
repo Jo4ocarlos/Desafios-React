@@ -24,7 +24,6 @@ function App() {
     <>
       <h1>Total da Conta: R$ {totalConta},00</h1>
 
-      <button onClick={() => SomarNaConta(10)}> clicar</button>
       {productsList.map((product) => (
 
         <Produto key={product.id}
