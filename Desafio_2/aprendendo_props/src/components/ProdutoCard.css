@@ -1,0 +1,22 @@
+.products_area{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card_produtos{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width:300px;
+    background-color: purple;
+    padding: 30px;
+   
+}
+span{
+    display: flex;
+    justify-content: space-between;
+}
+.red_text{
+    color: red;
+}
