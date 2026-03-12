@@ -8,7 +8,7 @@ const ProdutoCard = ({nome, preco, estoque})=>{
             <span>
                 <p className= {estoque > 0 ? "": "red_text"}>{estoque > 0 ? `R$ ${preco}`: "PRODUTO ESGOTADO" }
                 </p>
-            {estoque && <button>Comprar</button>}
+            {estoque >0? <button>Comprar</button> : ""}
             </span>
             </div>
             
