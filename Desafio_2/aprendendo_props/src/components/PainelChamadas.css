@@ -1,0 +1,10 @@
+.prioridade_alta{
+    border: 1px solid red;
+    background-color: rgb(199, 66, 66);
+    padding: 10px;
+}
+.prioridade_baixa{
+    border: 1px solid blue;
+    background-color: rgb(66, 68, 199);
+    padding: 10px;
+}

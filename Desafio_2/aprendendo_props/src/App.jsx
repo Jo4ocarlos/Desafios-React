@@ -2,6 +2,7 @@ import Cracha from "./components/Cracha";
 import ListaClientes from "./components/ListaClientes";
 import Projeto from "./components/Projeto";
 import ProdutoCard from "./components/ProdutoCard";
+import PainelChamadas from "./components/PainelChamadas";
 const App = () => {
   // objeto para ser usado no componente "ListaClientes"
   const meusClientes = [
@@ -14,6 +15,13 @@ const App = () => {
     { id: 4, nome: "Placa ps", preco: 40, quantidadeEstoque: 0 },
     { id: 5, nome: "Lona", preco: 800, quantidadeEstoque: 5 },
   ];
+//objeto para ser usado no componente "PainelChamadas"
+  const Ticktes = [
+    {id:6, assunto:"retirar RG", prioridade:"normal", status: "processando"},
+    {id:7, assunto:"Regularizar CNH", prioridade:"alta", status: "processando"},
+    {id:8, assunto:"imprimir antecedentes criminais", prioridade:"normal", status: "resolvido"},
+    {id:9, assunto:"Aposentadoria", prioridade:"alta", status: "resolvido"},
+  ]
 
   return (
     <div>
@@ -45,6 +53,18 @@ const App = () => {
             preco={product.preco}
             estoque={product.quantidadeEstoque}
           />
+        ))}
+      </div>
+
+      <div>
+        <h1>Help Desk</h1>
+        {Ticktes.map((ticket)=>(
+          <PainelChamadas
+          key={ticket.id}
+          {...ticket}
+          />
+
+          /* da para passar todos os dados de um objeto pela prop utilizando spreed Operator basta importaar na ordem correta no elemento filho*/
         ))}
       </div>
     </div>
