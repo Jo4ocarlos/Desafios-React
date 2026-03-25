@@ -3,11 +3,11 @@ import { useState } from 'react'
 import './App.css'
 import Cronometro from './components/Cronometro'
 function App() {
-const [tempoRestante, setTempoRestante] = useState(1500)
+const [tempoRestante, setTempoRestante] = useState(10)
 
   return (
     <>
-    <Cronometro tempoRestante={tempoRestante}/>
+    <Cronometro tempoRestante={tempoRestante} setTempoRestante ={setTempoRestante}/>
     </>
   )
 }
