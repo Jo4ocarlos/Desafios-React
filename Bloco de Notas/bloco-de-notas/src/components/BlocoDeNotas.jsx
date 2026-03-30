@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 
 const BlocoDeNotas = () => {
-  const [userText, setUserText] = useState('')
+  const [userText, setUserText] = useState(()=>{
+    return localStorage.getItem('textSaved') || ''
+  })
 
   const handleChange = (e)=>{
-    setUserText(e.target.value)
+    setUserText(e.target.value )
   }
-  
-
   useEffect(()=>{
-    localStorage.setItem('Textsaved', userText)
-
+    localStorage.setItem("textSaved", userText)
   }, [userText])
 
 
