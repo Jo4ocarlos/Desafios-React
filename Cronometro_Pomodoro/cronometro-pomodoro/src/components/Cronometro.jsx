@@ -12,8 +12,8 @@ const Cronometro = ({ tempoRestante, setTempoRestante }) => {
     if (timeController) {
       const timer = setInterval(() => {
         setTempoRestante((time) => {
-          if(time <=0){
-            
+          if (time <= 0) {
+
             clearInterval(timer)
             setTimeController(false)
             zerarCronometro()
@@ -22,7 +22,7 @@ const Cronometro = ({ tempoRestante, setTempoRestante }) => {
         });
       }, 1000);
 
-     
+
       return () => {
         clearInterval(timer);
       };
@@ -31,7 +31,7 @@ const Cronometro = ({ tempoRestante, setTempoRestante }) => {
 
 
   const startOrStopTimer = () => {
-    setTimeController((controller)=>{
+    setTimeController((controller) => {
       return !controller
     });
   };
@@ -39,14 +39,14 @@ const Cronometro = ({ tempoRestante, setTempoRestante }) => {
 
   const zerarCronometro = () => {
     setTempoRestante(1500);
-    
+
   };
 
   return (
     <div>
       {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
       <button onClick={startOrStopTimer}>{timeController ? 'pausar' : 'iniciar'}</button>
-  
+
       <button onClick={zerarCronometro}>zerar</button>
     </div>
   );
