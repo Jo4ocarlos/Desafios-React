@@ -1,6 +1,11 @@
+//components
 import Reasearcher from "./components/Researcher";
+
+//hooks
 import { useFetch } from "./hooks/useFetch";
 import { useState } from "react";
+
+//styles
 import "./App.css";
 
 function App() {
@@ -8,7 +13,7 @@ function App() {
   const url = `https://api.github.com/users/${userSearched}`;
   const { user, fetchData } = useFetch(url);
 
-  console.log(userSearched)
+ 
   return (
     <>
       <label>

@@ -1,11 +1,14 @@
-import { useFetch } from "../hooks/useFetch";
+import './Researcher.css'
+
 
 const Reasearcher = ({ user }) => {
-  
+
+
   return (
     <div>
       {user && (
         <div>
+
           <div>
             {/* card principal */}
             <span>
@@ -17,8 +20,8 @@ const Reasearcher = ({ user }) => {
               <p></p>
             </div>
           </div>
+
           <div>
-            {" "}
             {/* area dos seguidores e seguindo */}
             <span>
               <h5>Seguidores</h5>
@@ -29,6 +32,8 @@ const Reasearcher = ({ user }) => {
               <p>{user.following}</p>
             </span>
           </div>
+
+
         </div>
       )}
     </div>
