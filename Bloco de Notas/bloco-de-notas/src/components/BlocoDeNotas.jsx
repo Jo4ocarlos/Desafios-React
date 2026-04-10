@@ -8,6 +8,7 @@ const BlocoDeNotas = () => {
   const handleChange = (e)=>{
     setUserText(e.target.value )
   }
+  
   useEffect(()=>{
     localStorage.setItem("textSaved", userText)
   }, [userText])
