@@ -1,0 +1,27 @@
+
+.research{
+    display: flex;
+     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: rgb(96, 116, 153);
+    height: 100vh;
+
+}
+.research input{
+    padding: 13px 30px ;
+    border-radius: 10px 0px 0px 10px;
+}
+button{
+    padding: 13px 30px ;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(194, 196, 209);
+    color: #fff;
+    font-weight: bolder;
+    position: relative;
+    bottom: 3px;
+}
