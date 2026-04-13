@@ -3,7 +3,7 @@ import Reasearcher from "./components/Researcher";
 
 //hooks
 import { useFetch } from "./hooks/useFetch";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //styles
 import "./App.css";
@@ -11,9 +11,8 @@ import "./App.css";
 function App() {
   const [userSearched, setUserSearched] = useState("");
   const url = `https://api.github.com/users/${userSearched}`;
-  const { user, fetchData } = useFetch(url);
+  const { user, fetchData, loading, error } = useFetch(url);
 
- 
   return (
     <>
       <label>
@@ -21,7 +20,7 @@ function App() {
         <button onClick={fetchData}>buscar</button>
       </label>
 
-      <Reasearcher user={user} />
+      <Reasearcher user={user} loading={loading} error={error} />
     </>
   );
 }

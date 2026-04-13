@@ -1,18 +1,24 @@
 import './Researcher.css'
 
 
-const Reasearcher = ({ user }) => {
+const Reasearcher = ({ user, loading, error }) => {
 
 
   return (
-    <div>
+    <div className='card-area'>
+      {loading &&
+      <p>Aguarde estamos realizando a busca...</p>
+      }
+      {error && 
+      <p>{error}</p>
+      }
       {user && (
-        <div>
+        <div className='card-user'>
 
-          <div>
+          <div className='header-card'>
             {/* card principal */}
             <span>
-              <img src="user.avatar_url" alt="imagem do usuario" />
+              <img src={user.avatar_url} alt="imagem do usuario" />
             </span>
             <div>
               <p>Nome: {user.name}</p>
@@ -21,7 +27,7 @@ const Reasearcher = ({ user }) => {
             </div>
           </div>
 
-          <div>
+          <div className='user-infs'>
             {/* area dos seguidores e seguindo */}
             <span>
               <h5>Seguidores</h5>
@@ -30,6 +36,10 @@ const Reasearcher = ({ user }) => {
             <span>
               <h5>Seguindo</h5>
               <p>{user.following}</p>
+            </span>
+            <span>
+              <h5>Repositórios Públicos</h5>
+              <p>{user.public_repos}</p>
             </span>
           </div>
 
