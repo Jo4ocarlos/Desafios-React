@@ -1,5 +1,5 @@
 import { useFetch } from "../hooks/useFetch";
-
+import { Link } from "react-router-dom";
 const Home = ()=>{
     const url = "https://fakestoreapi.com/products"
 
@@ -16,8 +16,8 @@ const Home = ()=>{
                         </div>
                         <p>{product.title}</p>
                         <div>
-                            <button>Comprar</button>
-                            <p>{product.price}</p>
+                            <p>$ {product.price}</p>
+                            <Link to={`/product/${product.id}/info`}>Ver detalhes</Link>
                         </div>
     
                     </li>
