@@ -33,3 +33,11 @@ header {
   color: #2c3e50;
   letter-spacing: -1px;
 }
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #f0f0f0;
+  padding-top: 15px;
+  margin-top: 20px;
+}

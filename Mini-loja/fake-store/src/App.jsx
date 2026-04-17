@@ -26,6 +26,7 @@ function App() {
           <Route path="/back" element={<Navigate to="/" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <footer><p>© Copyright 2026 - Todos os Direitos Reservados - Jo4ocarlos</p></footer>
       </BrowserRouter>
     </div>
   );
