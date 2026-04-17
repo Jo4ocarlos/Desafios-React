@@ -1,0 +1,65 @@
+.info-container {
+  padding: 20px 0;
+}
+
+
+/* O container principal que divide a tela ao meio */
+.product-details {
+  display: flex;
+  gap: 40px; /* Espaço entre a imagem e o texto */
+  align-items: flex-start; /* Alinha tudo pelo topo */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Área da imagem */
+.product-image-large {
+  flex: 0 0 40%; /* Diz que a imagem vai ocupar 40% da largura do card */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-image-large img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain; /* Mantém a proporção sem distorcer */
+}
+
+/* Área do texto */
+.product-text {
+  flex: 1; /* Ocupa todo o resto do espaço disponível (os 60%) */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço entre os parágrafos */
+}
+
+.product-title {
+  font-size: 28px;
+  color: #2c3e50;
+  line-height: 1.2;
+}
+
+.product-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.product-desc strong {
+  color: #333;
+}
+
+/* Destaque para a avaliação */
+.product-rating {
+  font-size: 16px;
+  font-weight: 500;
+  color: #d35400; /* Um tom de laranja/dourado para combinar com estrelas */
+  background-color: #fdf5e6; /* Um fundo bem clarinho */
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: inline-block; /* Faz a cor de fundo abraçar só o texto, e não a linha toda */
+  width: fit-content;
+}

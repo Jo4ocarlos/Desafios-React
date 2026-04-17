@@ -1,0 +1,30 @@
+.navbar-header {
+  margin-bottom: 30px;
+}
+
+.navbar-header ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.navbar-header a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+/* Estilo para quando passar o mouse */
+.navbar-header a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilo automático do NavLink para a página atual */
+.navbar-header a.active {
+  background-color: #2c3e50;
+  color: #ffffff;
+}

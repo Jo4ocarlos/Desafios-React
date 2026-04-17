@@ -11,6 +11,7 @@ const Home = () => {
 
   return (
     <div>
+      <h4>Todos os produtos</h4>
       {loading && <p>Carregando seus dados...</p>}
       {error && <p>{error}</p>}
       <ul className="products-area">
