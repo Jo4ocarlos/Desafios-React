@@ -14,23 +14,20 @@ const Home = () => {
     }
     if (e.target.value === "anterior" && pages > 1) {
       setPages((prevPage) => {
-          return prevPage - 1;
-        
+        return prevPage - 1;
       });
     }
-   
   };
 
   return (
-    <div>
+    <div className="home-container">
       {loading && <p>carregando...</p>}
-        {error && <p>{error}</p>}
+      {error && <p>{error}</p>}
       <ul className="character-area">
-        
         {characters &&
           characters.map((character) => (
             <li key={character.id} className="character-card">
-              <div>
+              <div className="character-name">
                 <p>{character.name}</p>
               </div>
               <div className="character-image">
@@ -43,12 +40,16 @@ const Home = () => {
                 <li>Species: {character.species}</li>
                 <li>Gender: {character.gender}</li>
                 <li>Status: {character.status}</li>
-                <li>Origin: {character.origin["name"]}</li>
               </ul>
+              <div className="character-origin">
+                <p>
+                 {character.origin["name"]}
+                </p>
+              </div>
             </li>
           ))}
       </ul>
-      <div>
+      <div className="pagination">
         <button
           onClick={changePages}
           value={"anterior"}
