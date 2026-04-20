@@ -12,7 +12,7 @@ export const useFetch = (url) => {
             const res = await fetch(url)
        
             const json = await res.json()
-            setData(json)
+            setData(json.results)
 
         } catch (error) {
             
@@ -21,6 +21,6 @@ export const useFetch = (url) => {
     }
 
     fetchData()
-  });
+  }, [url]);
   return{data, loading, error}
 };
