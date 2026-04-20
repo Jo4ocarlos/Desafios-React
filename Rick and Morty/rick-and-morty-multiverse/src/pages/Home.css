@@ -1,5 +1,20 @@
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.character-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+.character-card {
+  width: 300px;
+  border: 1px solid black;
+}
+
+.character-image img {
+  width: 100%;
+}
+.character-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 colunas de tamanho igual */
+  gap: 10px; /* Espaço entre itens */
+  list-style: none;
 }
