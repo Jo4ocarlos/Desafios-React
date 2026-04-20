@@ -14,10 +14,13 @@ export const useFetch = (url) => {
       try {
         const response = await fetch(url);
         const json = await response.json();
-
+        //tratamento de erro
+        if(!response.ok){
+          throw new Error(`Erro HTTP: ${response.status}`)
+        }
         setData(json);
       } catch (error) {
-
+        setError(`Ops, deu um erro na busca: ${error.message}`)
       }
       setLoading(false);
     };
