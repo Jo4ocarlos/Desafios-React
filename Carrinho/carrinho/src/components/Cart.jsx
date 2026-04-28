@@ -4,18 +4,31 @@ import { useCartContext } from "../hooks/useCartContext";
 import { useState } from "react";
 
 const Cart = ()=>{
-    const {productValue, cartQTD, dispach} = useCartContext()
-    console.log(data)
+    const {totalValue, cartQTD, dispatch} = useCartContext()
+
+
+    const addToCart = (value)=>{
+     
+        dispatch({type: "ADICIONAR", value:value})
+     
+        
+    }
+    const remove = (value)=>{
+        dispatch({type:"REMOVER", value:value})
+        
+    }
     return(
         <div>
-            {data.map((product)=>(
+            {data['products'].map((product)=>(
                 <li key={product.id}>
-                    {product.name} - { product.price}
-                <button>comprar</button>
+                    {product.name} - R$: { product.price}
+                <button onClick={()=> addToCart(product.price)}>comprar</button>
+                <button onClick={()=> remove(product.price)}>remover do carrinho</button>
                 </li>
             ))}
-            <h1>{productValue}</h1>
+            <h1>{totalValue}</h1>
             <h2>{cartQTD}</h2>
+            
         </div>
     )
 }

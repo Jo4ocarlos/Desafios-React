@@ -8,5 +8,5 @@ createRoot(document.getElementById("root")).render(
     <CartContextProvider>
       <App />
     </CartContextProvider>
-  </StrictMode>,
+  </StrictMode>
 );
