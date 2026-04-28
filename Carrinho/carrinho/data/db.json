@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": "4",
+      "name": "Monitor Gamer 27' LED",
+      "price": "1250.5"
+    },
+    {
+      "name": "PC gamer I5",
+      "price": "5.000",
+      "id": "y-zSGdEy_Os"
+    },
+    {
+      "name": "I9 10º",
+      "price": "9.000",
+      "id": "uM3sdL-wk8U"
+    },
+    {
+      "name": "suporte de parede",
+      "price": "200",
+      "id": "IHkMSbaqTJg"
+    },
+    {
+      "name": "Cadeira gamer",
+      "price": "750",
+      "id": "z1K5MqoHo48"
+    },
+    {
+      "name": "capa de celular",
+      "price": "25",
+      "id": "owVEbPIHAjc"
+    },
+    {
+      "name": "pelicula de vidro",
+      "price": "20",
+      "id": "yOkGlhKijjo"
+    }
+  ]
+}
