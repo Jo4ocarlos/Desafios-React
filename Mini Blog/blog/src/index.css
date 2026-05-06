@@ -27,3 +27,20 @@ a, nav button{
 a:hover, nav button:hover{
     color: #bbb;
 }
+/*como a maioria dos formulários são iguais, criamos um estilo global*/
+/*form styles*/
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 30%;
+}
+ form span{
+    display: block;
+    margin-bottom: 5px;
+    
+}
+form input{
+    width: 100%;
+}

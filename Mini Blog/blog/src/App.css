@@ -1,3 +1,11 @@
-.conteiner{
-  min-height: 60vh;
+/* Este é o container que envolve tudo */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+
+.main-content {
+  flex: 1; /* Isso faz o conteúdo expandir e empurrar o Footer para baixo */
 }

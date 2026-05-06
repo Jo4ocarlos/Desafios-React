@@ -3,16 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 60vh;
+    height: 70vh;
     gap: 20px;
 }
 
-.register_page form{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
-}
-.register_page form span{
-    display: block
-}
