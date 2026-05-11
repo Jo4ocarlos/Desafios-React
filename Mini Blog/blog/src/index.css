@@ -6,7 +6,7 @@
     margin:0;
 }
 .active {
-    background-color: #000;
+    background-color:#00ccff;
     border-radius: 10px;
     color:#fff;
 }
@@ -20,12 +20,12 @@ a, nav button{
     background-color: transparent;
     border: none;
     color: #000;
-    transition: .5s;
+    transition: .2s;
     font-size: 1em;
     cursor: pointer;
 }
 a:hover, nav button:hover{
-    color: #bbb;
+    color: #209db3;
 }
 /*como a maioria dos formulários são iguais, criamos um estilo global*/
 /*form styles*/
@@ -33,14 +33,51 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 10px;
-    width: 30%;
+    gap: 20px;
+    width: 28%;
 }
  form span{
     display: block;
     margin-bottom: 5px;
+    font-weight:600;    
+}
+input, textarea{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #0000006b;
+    padding: 10px;
+}
+input::placeholder, textarea::placeholder{
+    color: #AAA;
+}
+.btn{
+    background-color:#33d6ff;
+    color: #fff;
+    width: 200px;
+    padding: 10px ;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    margin: auto;
+}
+.btn:hover{
+    text-decoration: underline;
+    background-color:#00ccff;
+    position: relative;
+    cursor: pointer;
+    bottom: 5px;
     
 }
-form input{
-    width: 100%;
+.btn-danger:hover{
+    background-color: #fa2828;
+}
+
+.error{
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 2px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
 }
