@@ -25,6 +25,7 @@ export const useAuthentication = () => {
     // essa função é para evitar vazamento de memomria(preciso entender mais sobre, e se é apenas assim que resolve)
   };
 
+  //register (função que cria o usuario no firenbase)
   const createUser = async (data) => {
     checkIfisCancelled();
     setLoading(true);
@@ -61,10 +62,44 @@ export const useAuthentication = () => {
 
     setLoading(false);
   };
+  //login
+  const logIn = async (data)=>{ //tem que ser assincrona porque vamos ter que esperar o usuario
+    setLoading(true)
+    checkIfisCancelled()
+    setError('')
+
+    try {
+
+      await signInWithEmailAndPassword(auth, data.email, data.password)
+      setLoading(false)
+
+    } catch (error) {
+
+      if(error.message.includes("user-not-found")){
+        setError('Usuário não encontrado! Verifique se o e email está digitado corretamente')
+      }else if(error.message.includes("wrong-password")){
+        setError('Senha incorreta')
+      }else{
+        setError('Ocorreu um erro, tente novamente mais tarde')
+      }
+    }
+
+    setLoading(false)
+  }
+
+  //logout
+  const logOut = ()=>{
+    setLoading(true)
+    
+    checkIfisCancelled() // resolve memory leak
+    signOut(auth)
+
+    setLoading(false)
+  }
 
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { auth, createUser, error, loading };
+  return { auth, createUser, error, loading, logOut, logIn };
 };

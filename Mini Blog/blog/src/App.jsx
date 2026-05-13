@@ -60,7 +60,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={!user? <Login /> : <Navigate to="/"/>} /> {/*se o usuario estiver logado a gente redireciona ele para a home, caso tente forçar a pagina de login pela barra de pesquisa */}
-              <Route path="/register" element={<Register />} />
+              <Route path="/register" element={!user? <Register /> : <Navigate to="/"/>} />
               <Route path="/about" element={<About />} />
               <Route path="/post/create" element={user? <CreatePost/> : <Navigate to={'/login'}/>}/>
               <Route path="/dashboard" element={user? <Dashboard/> : <Navigate to={'/login'}/>}/>
