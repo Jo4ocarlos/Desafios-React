@@ -5,6 +5,16 @@ import {
   Navigate,
   NavLink,
 } from "react-router-dom";
+//Hooks
+import { useState, useEffect } from "react";
+import { useAuthentication } from "./hooks/useAuthentication";
+
+//context
+import { AuthContextProvider } from "./context/AuthContext";
+//firebase
+import { onAuthStateChanged } from "firebase/auth"; // essa função nativa do firebase mapeia se autenticação do usuario foi feita com sucesso
+
+
 //pages
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -15,27 +25,30 @@ import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
 //css
 import "./App.css";
+import { useContext } from "react";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="container">
-        <header>
-          <NavBar />
-        </header>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <div className="container">
+          <header>
+            <NavBar />
+          </header>
 
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </main>
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </main>
 
-        <Footer />
-      </div>
-    </BrowserRouter>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AuthContextProvider>
   );
 }
 
