@@ -26,10 +26,30 @@ import Footer from "./components/Footer/Footer";
 //css
 import "./App.css";
 import { useContext } from "react";
+import CreatePost from "./pages/userAuthenticatedPages/CreatePost/CreatePost";
+import Dashboard from "./pages/userAuthenticatedPages/Dasgboard/Dashboard";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
+  //vamos criar a logica aqui porque engloba todas as funções e pagina
+  const [user, setUser] = useState(undefined)
+  const {auth} = useAuthentication()
+
+  const loadingUser = user === undefined //vamos usar na logica la em baixo se o usuario for undefined a gente não renderiza nada
+
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user)=>{
+      setUser(user)
+    })
+  }, [auth])
+  
+  if(loadingUser){
+    return <p>Carregando..</p>
+  }
+
+
   return (
-    <AuthContextProvider>
+      <AuthContextProvider value={{user}}> {/*passando o usuario aqui eu consigo utilizalo em todos os loccais(até porque é context) */}
       <BrowserRouter>
         <div className="container">
           <header>
@@ -39,9 +59,12 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/login" element={!user? <Login /> : <Navigate to="/"/>} /> {/*se o usuario estiver logado a gente redireciona ele para a home, caso tente forçar a pagina de login pela barra de pesquisa */}
               <Route path="/register" element={<Register />} />
               <Route path="/about" element={<About />} />
+              <Route path="/post/create" element={user? <CreatePost/> : <Navigate to={'/login'}/>}/>
+              <Route path="/dashboard" element={user? <Dashboard/> : <Navigate to={'/login'}/>}/>
+              <Route path="*" element={<NotFound/>}/>
             </Routes>
           </main>
 
