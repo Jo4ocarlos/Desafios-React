@@ -1,11 +1,16 @@
-import { useState } from "react";
 import styles from "./CreatePost.module.css";
+
+//hooks
+import { useState } from "react";
+import {useNavigate} from 'react-router-dom'
+import { useAuthValue } from "../../../context/AuthContext";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [urlImg, setUrlImg] = useState("");
   const [content, setContent] = useState("");
   const [hashTags, setHashTags] = useState([""]);
+  const [formError, setFormError] = useState('')
 
   const handleTags = (e)=>{
     //convertemos o que vem do input como string para array, a cada virgula que o usuario digitar vira um componente do array
@@ -24,7 +29,7 @@ const CreatePost = () => {
       content,
       hashTags,
     }
-    
+
     console.log(newPost)
   };
   return (
@@ -32,6 +37,7 @@ const CreatePost = () => {
       <h1>Crie sua postagem!</h1>
       <p>Escreva sobre o que quiser e compartilhe suas ideias</p>
       <form onSubmit={handleSubmit}>
+        
         <label>
           <span>Título do post</span>
           <input
@@ -40,6 +46,7 @@ const CreatePost = () => {
             placeholder="pense em um bom título"
           onChange={(e)=> setTitle(e.target.value)} required/>
         </label>
+
         <label>
           <span>URL da imagem</span>
           <input
@@ -49,6 +56,7 @@ const CreatePost = () => {
             placeholder="insira uma imagem que represente seu post"
           onChange={(e)=> setUrlImg(e.target.value)} required/>
         </label>
+
         <label>
           <span>Conteúdo</span>
           <textarea name="content" required onChange={(e)=> setContent(e.target.value) } placeholder="No que você está pensando?" value={content}></textarea>
