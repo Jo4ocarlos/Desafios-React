@@ -1,9 +1,10 @@
 import styles from "./CreatePost.module.css";
 
 //hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {useNavigate} from 'react-router-dom'
 import { useAuthValue } from "../../../context/AuthContext";
+import { useInsertDocument } from "../../../hooks/useInsertDocument";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -11,6 +12,11 @@ const CreatePost = () => {
   const [content, setContent] = useState("");
   const [hashTags, setHashTags] = useState([""]);
   const [formError, setFormError] = useState('')
+
+  const {insertDocument, response} = useInsertDocument('posts')
+  const {user} = useAuthValue()
+
+  const navigate = useNavigate()
 
   const handleTags = (e)=>{
     //convertemos o que vem do input como string para array, a cada virgula que o usuario digitar vira um componente do array
@@ -22,16 +28,39 @@ const CreatePost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError('')
+
+    try{
+      new URL(urlImg)
+    } catch (error){
+      setFormError("Precisamos de uma url valida")
+      return
+    }
+
+    if(!title || !urlImg || !hashTags  || !content){
+      setFormError("Por favor, preencha todos os campos!")
+      return
+    }
+
 
     const newPost = {
       title,
       urlImg,
       content,
       hashTags,
+      uid: user.uid,
+      createdBy: user.displayName
     }
 
+    insertDocument(newPost)
+
     console.log(newPost)
+    navigate('/')
   };
+
+  useEffect(()=>{
+    setFormError(response.error)
+  },[response])
   return (
     <div className={styles.create_post_page}>
       <h1>Crie sua postagem!</h1>
@@ -73,8 +102,10 @@ const CreatePost = () => {
             required
           />
         </label>
-        <button className="btn">Criar post!</button>
+        {response.loading && <button className="btn" disabled>Criando sua postagem...</button>}
+        {!response.loading && <button className="btn">Criar post!</button>}
       </form>
+      {formError && <p className="error">{formError}</p>}
     </div>
   );
 };

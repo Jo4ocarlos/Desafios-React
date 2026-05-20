@@ -27,7 +27,7 @@ import Footer from "./components/Footer/Footer";
 import "./App.css";
 import { useContext } from "react";
 import CreatePost from "./pages/userAuthenticatedPages/CreatePost/CreatePost";
-import Dashboard from "./pages/userAuthenticatedPages/Dasgboard/Dashboard";
+import DashBoard from "./pages/userAuthenticatedPages/DashBoard/DashBoard";
 import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
               <Route path="/register" element={!user? <Register /> : <Navigate to="/"/>} />
               <Route path="/about" element={<About />} />
               <Route path="/post/create" element={user? <CreatePost/> : <Navigate to={'/login'}/>}/>
-              <Route path="/dashboard" element={user? <Dashboard/> : <Navigate to={'/login'}/>}/>
+              <Route path="/dashboard" element={user? <DashBoard/> : <Navigate to={'/login'}/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           </main>
