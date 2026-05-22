@@ -60,6 +60,16 @@ input::placeholder, textarea::placeholder{
     border: none;
     margin: auto;
 }
+.btn-search{
+    background-color: transparent;
+    border: none;
+    margin-left: -20px;
+}
+.btn-search:hover{
+    font-size: 18px;
+    transition: 0.5s;
+    cursor: pointer;
+}
 .btn:hover{
     text-decoration: underline;
     background-color:#00ccff;
