@@ -1,0 +1,10 @@
+.noposts{
+    text-align: center;
+}
+.noposts p{
+    margin-bottom: 20px;
+}
+.noposts a{
+    
+    padding: 10px 25px;
+}
