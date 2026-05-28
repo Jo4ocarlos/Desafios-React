@@ -26,7 +26,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
       try {
         let q;
-        q = await query(collectionRef, orderBy("createdAt", "desc"));
+        q = await query(collectionRef, orderBy("createdAt", "desc")); //pega todos os dados por data e organiza em decrescente 
 
         // mapear os dados
         await onSnapshot(q, (querySnapshot) => {

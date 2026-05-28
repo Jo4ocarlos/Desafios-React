@@ -1,10 +1,22 @@
 .noposts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-}
-.noposts p{
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    height: 10vh;
+    gap: 20px;
+    
 }
 .noposts a{
-    
     padding: 10px 25px;
+}
+.header_posts{
+
+}
+.body_posts{
+
+}
+.footer_posts{
+    
 }
