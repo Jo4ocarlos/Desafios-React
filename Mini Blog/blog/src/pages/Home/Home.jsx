@@ -12,10 +12,14 @@ const Home = () => {
 const [query, setQuery] = useState('') //state da pesquisa de formulários
 const {documents:posts, loading} = useFetchDocuments("posts")
 
-console.log("DADOS QUE CHEGARAM NA HOME:", posts);
+const navigate = useNavigate()
 
 const handleSubmmit = (e)=>{
     e.preventDefault()
+
+    if(query){
+      return navigate(`/search?q=${query}`)
+    }
 }
   return (
     <div className={style.home}>

@@ -30,6 +30,7 @@ import { useContext } from "react";
 import CreatePost from "./pages/userAuthenticatedPages/CreatePost/CreatePost";
 import DashBoard from "./pages/userAuthenticatedPages/DashBoard/DashBoard";
 import NotFound from "./pages/NotFound/NotFound";
+import Search from "./pages/Search/Search.jsx";
 
 function App() {
   //vamos criar a logica aqui porque engloba todas as funções e pagina
@@ -66,6 +67,7 @@ function App() {
               <Route path="/post/create" element={user? <CreatePost/> : <Navigate to={'/login'}/>}/>
               <Route path="/dashboard" element={user? <DashBoard/> : <Navigate to={'/login'}/>}/>
               <Route path="/MyProfile" element={user? <MyProfile/> : <Navigate to={'/login'}/>}/>
+              <Route path="/search" element={<Search/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           </main>
