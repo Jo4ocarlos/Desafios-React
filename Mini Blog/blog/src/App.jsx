@@ -20,6 +20,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import MyProfile from './pages/MyProfile/MyProfile.jsx'
 //components
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
@@ -58,12 +59,13 @@ function App() {
 
           <main className="main-content">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/"  element={user? <Home/> : <Navigate to={'/login'}/>}/>
               <Route path="/login" element={!user? <Login /> : <Navigate to="/"/>} /> {/*se o usuario estiver logado a gente redireciona ele para a home, caso tente forçar a pagina de login pela barra de pesquisa */}
               <Route path="/register" element={!user? <Register /> : <Navigate to="/"/>} />
               <Route path="/about" element={<About />} />
               <Route path="/post/create" element={user? <CreatePost/> : <Navigate to={'/login'}/>}/>
               <Route path="/dashboard" element={user? <DashBoard/> : <Navigate to={'/login'}/>}/>
+              <Route path="/MyProfile" element={user? <MyProfile/> : <Navigate to={'/login'}/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
           </main>

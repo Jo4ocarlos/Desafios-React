@@ -33,7 +33,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
           setDocuments(
             querySnapshot.docs.map((doc) => ({
               id: doc.id,
-              ...doc.data(),
+              ...doc.data()
             })),
           );
         });

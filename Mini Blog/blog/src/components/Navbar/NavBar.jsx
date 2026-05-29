@@ -16,9 +16,11 @@ const NavBar = () => {
       </NavLink>
 
       <ul className={styles.navLinks}>
-        <li>
+        {user && (
+          <li>
           <NavLink to="/">Home</NavLink>
         </li>
+        )}
         {/*usuarios não autenticados vão ver as paginas login e cadastrar caso contrario, vera as de usuarios autenticados */}
         {!user && (
           <>
@@ -38,16 +40,20 @@ const NavBar = () => {
             <li>
               <NavLink to="/dashboard">Notificações</NavLink>
             </li>
+            <li>
+              <NavLink to="/MyProfile">Meu Perfil</NavLink>
+            </li>
+            <li>
+            <Link onClick={logOut}>Sair</Link>
+          </li>
           </>
         )}
 
-        <li>
+        
+        {!user && (
+          <li>
           <NavLink to="/about">Sobre</NavLink>
         </li>
-        {user && (
-          <li>
-            <Link onClick={logOut}>Sair</Link>
-          </li>
         )}
       </ul>
     </nav>

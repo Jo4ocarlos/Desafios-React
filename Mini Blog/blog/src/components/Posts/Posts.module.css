@@ -1,22 +1,149 @@
-.noposts{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    height: 10vh;
-    gap: 20px;
-    
-}
-.noposts a{
-    padding: 10px 25px;
-}
-.header_posts{
+/* Container que centraliza tudo na página */
+.page_wrapper {
+  padding: 15px;
 
 }
-.body_posts{
 
+/* O Feed (a tag UL que segura todos os posts) */
+.feed_container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-.footer_posts{
-    
+
+/* --- ESTILO PARA QUANDO ESTIVER VAZIO --- */
+.noposts {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  border: 2px dashed #d1d5db; /* Borda tracejada moderna */
+  border-radius: 12px;
+  color: #6b7280;
+}
+
+.noposts p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+/* --- O CARD DO POST --- */
+.post_card {
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* CABEÇALHO (Foto redonda e Nome) */
+.header_posts {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.header_posts img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #f4f5f7;
+  border: 1px solid #eaeaea;
+}
+
+.header_posts h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* CORPO DO POST */
+.body_posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.body_posts h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+.body_posts p {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.body_posts img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+/* Container que alinha as tags lado a lado */
+.tags_container {
+  display: flex;
+  flex-wrap: wrap; /* Se tiver muitas tags, elas quebram para a linha de baixo naturalmente */
+  gap: 10px; /* Espaço entre uma tag e outra */
+  margin-bottom: 10px;
+}
+
+/* O visual da Tag (Estilo Pílula/Badge) */
+.tag_badge {
+  background-color: #f4f5f7;
+  color: #2b6cb0; /* Um tom de azul corporativo sutil */
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px; /* Deixa as bordas bem arredondadas */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+.tag_badge:hover {
+  background-color: #e2e8f0;
+  color: #1a365d;
+}
+
+/* RODAPÉ E BOTÕES DE AÇÃO */
+.footer_posts {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #ebebeb;
+  padding-top: 5px;
+}
+
+.action_btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #65676b;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.action_btn:hover {
+  background-color: #f4f5f7;
+  color: #2b6cb0;
 }
