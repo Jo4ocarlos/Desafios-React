@@ -44,7 +44,7 @@ function App() {
       setUser(user)
     })
   }, [auth])
-  
+  console.log(user)
   if(loadingUser){
     return <p>Carregando..</p>
   }
