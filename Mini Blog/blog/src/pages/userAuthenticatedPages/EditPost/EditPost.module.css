@@ -1,0 +1,8 @@
+.create_post_page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    gap: 20px;
+}
