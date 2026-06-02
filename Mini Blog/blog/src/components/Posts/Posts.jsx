@@ -44,13 +44,18 @@ const Posts = ({ posts }) => {
                 )}
 
                 {/* Container das Tags */}
-                {post.hashTags.length !== 0 && (
+                {/* Container das Tags */}
+                {post.hashTags && post.hashTags.length > 0 && (
                   <div className={style.tags_container}>
-                    {post.hashTags.map((tag) => (
-                      <span key={tag} className={style.tag_badge}>
-                        #{tag}
-                      </span>
-                    ))}
+                    {post.hashTags
+                      .filter(
+                        (tag) => tag.trim() !== "",
+                      ) /* 1. O FILTRO SALVA-VIDAS */
+                      .map((tag, index) => (
+                        <span key={index} className={style.tag_badge}>
+                          #{tag.replace(/^#/, "")}
+                        </span>
+                      ))}
                   </div>
                 )}
               </div>

@@ -39,7 +39,9 @@ const EditPost = () => {
   }, [post]);
 
   const handleTags = (e) => {
-    setTagsText(e.target.value); // esse é oque aparece no input, o value do input hastags
+
+    let textoFormatado = e.target.value.replace(/([^,\s])\s+/g, '$1, ');
+    setTagsText(textoFormatado); // esse é oque aparece no input, o value do input hastags
 
     // esse aqui é o que vai para o servidor e e ja atualizamos o estado com "setHashTags(stringToArray);" para que o usuario já tenha um retorno no preview
     const stringToArray = e.target.value
