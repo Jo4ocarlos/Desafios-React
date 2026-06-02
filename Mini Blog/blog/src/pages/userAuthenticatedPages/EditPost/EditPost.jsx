@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../../context/AuthContext";
 import { useInsertDocument } from "../../../hooks/useInsertDocument";
+import { useUpdateDocument } from "../../../hooks/useUpdateDocument";
 import { useFetchDoc } from "../../../hooks/useFetchDoc";
 
 const EditPost = () => {
@@ -20,7 +21,8 @@ const EditPost = () => {
   const [tagsText, setTagsText] = useState(""); //Esse estado cuida única e exclusivamente do que o usuário está vendo e digitando no input
   const [formError, setFormError] = useState("");
 
-  const { insertDocument, response } = useInsertDocument("posts");
+  const { updateDocument, response } = useUpdateDocument
+  ("posts", id);
 
   const navigate = useNavigate();
 
@@ -72,10 +74,10 @@ const EditPost = () => {
       createdBy: user.displayName,
     };
 
-    insertDocument(newPost);
+    updateDocument(id, newPost);
 
     console.log(newPost);
-    navigate("/");
+    navigate("/MyProfile");
   };
 
   useEffect(() => {
