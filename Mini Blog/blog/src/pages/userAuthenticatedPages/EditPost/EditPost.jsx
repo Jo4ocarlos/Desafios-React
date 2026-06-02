@@ -22,7 +22,7 @@ const EditPost = () => {
   const [formError, setFormError] = useState("");
 
   const { updateDocument, response } = useUpdateDocument
-  ("posts", id);
+  ("posts");
 
   const navigate = useNavigate();
 

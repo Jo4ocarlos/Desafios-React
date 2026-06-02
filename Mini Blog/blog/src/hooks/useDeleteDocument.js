@@ -31,12 +31,12 @@ export const useDeleteDocument = (docCollection) => {
     if (!cancelled) dispatch(action);
   };
 
-  const deleteDocument = async (id) => {
+  const deleteDocument = (id) => {
     checkCancelBeforeDispatch({ type: "LOADING" });
     
     try {
   
-      await deleteDoc(doc(db, docCollection, id));
+      deleteDoc(doc(db, docCollection, id));
 
       checkCancelBeforeDispatch({
         type: "DELETED_DOC",

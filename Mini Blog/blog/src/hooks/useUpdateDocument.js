@@ -35,20 +35,20 @@ export const useUpdateDocument = (docCollection) => {
     }
   };
 
-  const updateDocument = async (id, data) => {
+  const updateDocument = (id, data) => {
     checkCancelBeforeDispatch({
       type: "LOADING",
   
     });
     try {
     
-        const docRef = await doc(db, docCollection, id)
+        const docRef = doc(db, docCollection, id)
 
-        const updatedDocument = await updateDoc(docRef, data)
+        const updatedDocument = updateDoc(docRef, data)
     
       checkCancelBeforeDispatch({
         type: "UPDATED_DOC",
-        payload: updatedDocument,
+        payload: data,
       });
 
     } catch (error) {
